@@ -3,23 +3,65 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
-import { List, Datagrid, TextField, DateField, Filter, TextInput, EditButton  } from 'react-admin';
+import Button from '@material-ui/core/Button';
+import SimpleImageSlider from "react-simple-image-slider";
+import { List, TextField, DateField } from 'react-admin';
+import { CardActionArea } from '@material-ui/core';
 
-const UserFilter = (props) => (
-    <Filter {...props}>
-        <TextInput label="Search" source="q" alwaysOn />
-    </Filter>
-);
+const cardStyle = {
+    width: 300,
+    minHeight: 300,
+    margin: '0.5em',
+    display: 'inline-block',
+    verticalAlign: 'top'
+};
+
+const SessionGrid = ({ ids, data, basePath }) => {
+   
+    const images = [
+        { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ocOs7hvJoVc6XqvZ7glT8HhQ1tbaQCoc-nP4_ZkkO0ukCs7M&s" },
+        { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ocOs7hvJoVc6XqvZ7glT8HhQ1tbaQCoc-nP4_ZkkO0ukCs7M&s" },
+        { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ocOs7hvJoVc6XqvZ7glT8HhQ1tbaQCoc-nP4_ZkkO0ukCs7M&s" },
+    ];
+   
+    return (
+    <div style={{ margin: '1em' }}>
+    {ids.map(id =>
+        <Card key={id} style={cardStyle}>
+            <CardActionArea>
+            <CardHeader
+                title={<TextField record={data[id]} source="patientData.name" />}
+                subheader={<DateField record={data[id]} source="timestamp" />}
+            />
+            </CardActionArea>
+                <div>
+                    <SimpleImageSlider
+                        width={300}
+                        height={150}
+                        images={images}
+                    />
+                </div>
+            <CardContent>
+                <TextField record={data[data.sessionId]} source="patientData.diagnosis" />
+                <TextField record={data[data.sessionId]} source="patientData.procedure" />
+            </CardContent>
+            <CardActions>
+                <Button size="small" color="primary">
+                    Show
+                </Button>
+            </CardActions>
+        </Card>
+    )}
+    </div>
+);};
+
+SessionGrid.defaultProps = {
+    data: {},
+    ids: [],
+};
 
 export const SessionTable = (props) => (
-    <List {...props} title="Sessions" filters={<UserFilter />} >
-        <Datagrid rowClick="edit">
-            <TextField source="sessionId" />
-            <DateField source="timestamp" showTime />
-            <TextField source="patientData.name" />
-            <DateField source="patientData.plannedSurgeryDate" showTime options={{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }} />
-            <TextField source="patientData.diagnosis" />
-            <TextField source="patientData.procedure" />
-        </Datagrid>
+    <List title="All sessions" {...props}>
+        <SessionGrid />
     </List>
 );

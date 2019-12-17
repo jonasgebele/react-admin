@@ -86,6 +86,96 @@ const dataProvider = fakeDataProvider({
       },
       timestamp: new Date('2019-11-11T03:24:00'),
     },
+    {
+      sessionId: 1,
+      patientData: {
+        name: "Jonas Gebele",
+        plannedSurgeryDate: new Date('2019-12-17T03:24:00'),
+        diagnosis: "Hand-Problem",
+        procedure: "Hand surgery",
+      },
+      timestamp: new Date('2019-12-17T03:24:00'),
+    },
+    {
+      sessionId: 2,
+      patientData: {
+        name: "Jürgen Klopp",
+        plannedSurgeryDate: new Date('2019-04-03T03:24:00'),
+        diagnosis: "Finger-Problem",
+        procedure: "Finger surgery",
+      },
+      timestamp: new Date('2019-04-03T03:24:00'),
+    },
+    {
+      sessionId: 3,
+      patientData: {
+        name: "Sadio Mane",
+        plannedSurgeryDate: new Date('2019-11-11T03:24:00'),
+        diagnosis: "Thumb-Problem",
+        procedure: "Thumb surgery",
+      },
+      timestamp: new Date('2019-11-11T03:24:00'),
+    },
+    {
+      sessionId: 1,
+      patientData: {
+        name: "Jonas Gebele",
+        plannedSurgeryDate: new Date('2019-12-17T03:24:00'),
+        diagnosis: "Hand-Problem",
+        procedure: "Hand surgery",
+      },
+      timestamp: new Date('2019-12-17T03:24:00'),
+    },
+    {
+      sessionId: 2,
+      patientData: {
+        name: "Jürgen Klopp",
+        plannedSurgeryDate: new Date('2019-04-03T03:24:00'),
+        diagnosis: "Finger-Problem",
+        procedure: "Finger surgery",
+      },
+      timestamp: new Date('2019-04-03T03:24:00'),
+    },
+    {
+      sessionId: 3,
+      patientData: {
+        name: "Sadio Mane",
+        plannedSurgeryDate: new Date('2019-11-11T03:24:00'),
+        diagnosis: "Thumb-Problem",
+        procedure: "Thumb surgery",
+      },
+      timestamp: new Date('2019-11-11T03:24:00'),
+    },
+    {
+      sessionId: 1,
+      patientData: {
+        name: "Jonas Gebele",
+        plannedSurgeryDate: new Date('2019-12-17T03:24:00'),
+        diagnosis: "Hand-Problem",
+        procedure: "Hand surgery",
+      },
+      timestamp: new Date('2019-12-17T03:24:00'),
+    },
+    {
+      sessionId: 2,
+      patientData: {
+        name: "Jürgen Klopp",
+        plannedSurgeryDate: new Date('2019-04-03T03:24:00'),
+        diagnosis: "Finger-Problem",
+        procedure: "Finger surgery",
+      },
+      timestamp: new Date('2019-04-03T03:24:00'),
+    },
+    {
+      sessionId: 3,
+      patientData: {
+        name: "Sadio Mane",
+        plannedSurgeryDate: new Date('2019-11-11T03:24:00'),
+        diagnosis: "Thumb-Problem",
+        procedure: "Thumb surgery",
+      },
+      timestamp: new Date('2019-11-11T03:24:00'),
+    },
   ]
 });
 
