@@ -184,7 +184,7 @@ class App extends Component {
     return (
       <Admin title="CaMRI Web App" dashboard={Dashboard} dataProvider={dataProvider}>
         <Resource name="users" list={UserTable} edit={EditGuesser} icon={UserIcon}/>
-        <Resource name="sessions" list={SessionTable} edit={EditGuesser} show={ShowGuesser} icon={CollectionsBookmarkIcon}/>
+        <Resource name="sessions" list={SessionTable} edit={EditGuesser}icon={CollectionsBookmarkIcon}/>
       </Admin>
     );
   }

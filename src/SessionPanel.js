@@ -5,7 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import Button from '@material-ui/core/Button';
 import SimpleImageSlider from "react-simple-image-slider";
-import { List, TextField, DateField } from 'react-admin';
+import { List, TextField, DateField,Filter, ReferenceInput, SelectInput, TextInput } from 'react-admin';
 import { CardActionArea } from '@material-ui/core';
 
 const cardStyle = {
@@ -16,8 +16,7 @@ const cardStyle = {
     verticalAlign: 'top'
 };
 
-const SessionGrid = ({ ids, data, basePath }) => {
-   
+const SessionGrid = ({ ids, data, basePath }) => { 
     const images = [
         { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ocOs7hvJoVc6XqvZ7glT8HhQ1tbaQCoc-nP4_ZkkO0ukCs7M&s" },
         { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ocOs7hvJoVc6XqvZ7glT8HhQ1tbaQCoc-nP4_ZkkO0ukCs7M&s" },
@@ -60,8 +59,20 @@ SessionGrid.defaultProps = {
     ids: [],
 };
 
+const PostFilter = (props) => (
+    <Filter {...props}>
+        <TextInput label="Search" source="q" alwaysOn />
+        <ReferenceInput label="Patient Name" source="patientData.name" reference="sessions" allowEmpty>
+            <SelectInput optionText="name" />
+        </ReferenceInput>
+        <ReferenceInput label="Date" source="timestamp" reference="sessions" allowEmpty>
+            <SelectInput optionText="name" />
+        </ReferenceInput>
+    </Filter>
+);
+
 export const SessionTable = (props) => (
-    <List title="All sessions" {...props}>
+    <List title="All sessions" filters={<PostFilter />} {...props}>
         <SessionGrid />
     </List>
 );
