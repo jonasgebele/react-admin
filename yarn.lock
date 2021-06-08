@@ -6629,9 +6629,9 @@ memory-fs@^0.5.0:
     readable-stream "^2.0.1"
 
 merge-deep@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/merge-deep/-/merge-deep-3.0.2.tgz#f39fa100a4f1bd34ff29f7d2bf4508fbb8d83ad2"
-  integrity sha512-T7qC8kg4Zoti1cFd8Cr0M+qaZfOwjlPDEdZIIPPB2JZctjaPM4fX+i7HOId69tAti2fvO6X5ldfYUONDODsrkA==
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/merge-deep/-/merge-deep-3.0.3.tgz#1a2b2ae926da8b2ae93a0ac15d90cd1922766003"
+  integrity sha512-qtmzAS6t6grwEkNrunqTBdn0qKwFgNWvlxUbAV8es9M7Ot1EbyApytCnvE0jALPa46ZpKDUo527kKiaWplmlFA==
   dependencies:
     arr-union "^3.1.0"
     clone-deep "^0.2.4"
@@ -8880,6 +8880,14 @@ react-scripts@3.2.0:
     workbox-webpack-plugin "4.3.1"
   optionalDependencies:
     fsevents "2.0.7"
+
+react-simple-image-slider@^1.0.2:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-simple-image-slider/-/react-simple-image-slider-1.0.4.tgz#2d57ce006d3912f560969e6ac2d8730e08386f7f"
+  integrity sha512-R1zh/HkAwzIplEA+zmt/qsq2S6wuIdN5I2hWllCiw5mYg37jE0GMxzcyQ+Noat3yArjg87YWgK4IdPkve2DXOw==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    prop-types "^15.6.2"
 
 react-transition-group@^2.2.1:
   version "2.9.0"
